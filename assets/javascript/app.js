@@ -31,30 +31,16 @@ while(questionArr.length > 0){
 }
 
 
-function grabRand(type){
+function grabRand(){
 	var index = Math.floor(Math.random()*questionArr.length);
-	var thisQuestion = [questionArr[index]];
+	var thisQuestion = questionArr[index];
 	usedQuestionArr.push(questionArr.splice(index, 1)[0]);
-	doStuff(type, thisQuestion);
+	handleQuestion(thisQuestion);
 }
 
-function doStuff(type, thisQuestion){
-	var type = type || "default";
-	var thisQuestion = thisQuestion || questionArr; 
-	var currentQuestion, currentAnswersArr;
-
-	for(var i = 0; i < thisQuestion.length; i++){
-		currentQuestion = thisQuestion[i].question;
-		currentAnswersArr = thisQuestion[i].answers;
-		if(type === "display"){
-			display(currentQuestion, currentAnswersArr);
-		} else if(type === "reset"){
-			reset();
-		}
-	}
-}
-
-function display(question, answersArr){
+function handleQuestion(thisQuestion){
+	var question = thisQuestion.question; 
+	var answersArr = thisQuestion.answers;
 
 	// clear old answer
 	console.log("\n\n\n\n___________CLEAR____________\n\n\n\n");

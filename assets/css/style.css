@@ -1,0 +1,10 @@
+body{
+	background-color: red; 
+}
+
+#game-div {
+	width: 900px;
+	height: 600px;
+	background-color: green;
+	margin: 0 auto;
+}

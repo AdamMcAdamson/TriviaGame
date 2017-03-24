@@ -7,15 +7,7 @@ var questionArr = [
 
 var usedQuestionArr = [];
 
-// questionArr[questionArr.length-1]; // last element in an array
-
-// var array = ["bread", "milk", "eggs", "turkey"];
-
-// for(var i = 0; i<array.length; i++){
-// 	array[i];
-// }
-
-// var question1 = new QuestionObj("question1", "Text1", ["answer1-1", "answer1-2"]);
+var answerKey = -1;
 
 // questionArr = Array.from(usedQuestionArr);
 // move questions from usedQuestionArr to questionArr;
@@ -63,47 +55,29 @@ function doStuff(type, thisQuestion){
 }
 
 function display(question, answersArr){
+
+	// clear old answer
+	console.log("\n\n\n\n___________CLEAR____________\n\n\n\n");
+
+	console.log("____________________________");
 	console.log("Question: " + question);
+
+	answerKey = -1;
+	
 	var loopNum = answersArr.length;
 	for(var i = 0; i < loopNum; i++){
 		var index = Math.floor(Math.random()*answersArr.length);
 		console.log("-- Answer " + (i + 1) + ": " + answersArr.splice(index, 1)[0]);
+		if(index === 0 && answerKey === -1){
+			console.log("^CORRECT^");
+			answerKey = i;
+		}
 	}
-	console.log("");
+	console.log("Correct Answer: " + (answerKey + 1));
+	console.log("____________END_____________");
 }
 
 function reset() {
 
 }
 
-/* To Select Random Array index and Not repeat */
-/*---------------------------------------------*/
-
-/* 	Test Variables:  */
-/* -----------------------*/
-
-//	var array = ["number 1", "number 2", "number 3", "number 4"];
-
-/*------------------------*/
-
-/*
-	// Store the total number of array elements
-	var loopNum = array.length;
-
-	// Create a new array (outArr) with the same values as the array
-	var outArr = Array.from(array);
-
-	// Loop the number of elements times
-	for(var i = 0; i < loopNum; i++){
-		
-		// Create a random index of outArr
-		var index = Math.floor(Math.random()*outArr.length);
-
-		// Remove and store value of the element at the random index 
-		var out = outArr.splice(index, 1)[0]
-
-		// Use the random array element as needed (Output)
-		console.log(out);
-
-	}
-*/

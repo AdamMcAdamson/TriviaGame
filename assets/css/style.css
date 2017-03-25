@@ -1,5 +1,5 @@
 body{
-	background-color: #cccccc; 
+	background-image: url('../images/congruent_pentagon.png'); 
 }
 
 h1 {
@@ -20,7 +20,7 @@ p {
 #game-div {
 	width: 900px;
 	height: 600px;
-	background-color: #999999;
+	background-color: rgba(206, 250, 230, 0.6);
 	margin: 0 auto;
 }
 
@@ -29,21 +29,27 @@ p {
 	text-align: center;
 }
 
-#question-master-div{
+#question-master-div {
 
 }
 
 .clickable {
-	margin-top: 20px;
-	margin-bottom: 20px;
+	box-sizing: border-box;
+	margin-top: 10px;
+	margin-bottom: 10px;
 	width: 650px;
 	padding: 10px 0;
 	display: block;
-	background-color: blue;
+	/*background-color: blue;*/
+	border-style: solid;
+	border-color: rgba(0,0,0,0);
+
 }
 
 .clickable:hover {
-	background-color: red; 
+	background-color: rgba(206, 250, 255, 0.8);
+	border-style: solid;
+	border-color: rgba(255, 200, 255, 0.8);
 }
 
 .question-img {
@@ -52,16 +58,23 @@ p {
 	max-height: 260px;
 }
 
-
 .center {
 	text-align: center;
 	margin-right: auto;
 	margin-left: auto;
 }
 .start {
-	margin-top: 170px;
+	margin-top: 170px;	
+	vertical-align: center;
+	background-color: rgba(206, 250, 255, 0.7);
+	border-style: solid;
+	border-color: rgba(255, 200, 255, 0.7);
 }
-
+.start:hover{
+	background-color: rgba(206, 250, 255, 0.8);
+	border-style: solid;
+	border-color: rgba(255, 200, 255, 0.8);
+}
 
 .inbetween-text {
 	margin-top: 180px;
